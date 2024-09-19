@@ -95,9 +95,11 @@ const Reviews = () => {
       <div className="w-full md:w-1/2 pr-4">
         <h2 className="font-prata font-bold mb-4 text-2xl">Reviews</h2>
         {reviews.length > 0 ? (
-          reviews.map((review, index) => {
-            {console.log(reviews)}
-            const destination = destinationsData.find(dest => dest.id === review.destinationId);
+          reviews?.map((review, index) => {
+           
+            
+            const destination = destinationsData.find(dest => dest.id === Number(review?.destinationId));
+            {console.log(destination,destinationsData)}
             return (
               <div key={index} className="mb-6 p-4 border rounded-lg bg-white shadow-lg">
                 <div className="flex items-center mb-2">
