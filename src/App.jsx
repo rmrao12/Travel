@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Destinations from './components/Destinations'
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 function App() {
  
@@ -11,10 +11,12 @@ function App() {
     <>
        <div className="container mx-auto p-6">
       <h1 className="text-4xl font-bold mb-6 text-center">Trip Catalog</h1>
+      <Navbar />
       <Destinations />
+      <Footer/>
     </div>
     </>
   )
 }
 
-export default App
+export default App;
