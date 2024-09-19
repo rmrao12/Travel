@@ -5,16 +5,17 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
 function App() {
- 
+  const [searchResults, setSearchResults] = useState([]);
 
   return (
     <>
-       <div className="container mx-auto p-6">
+        <Navbar onSearch={setSearchResults} />
+       <div className="container mx-auto p-6 mt-10">
       <h1 className="text-4xl font-bold mb-6 text-center">Trip Catalog</h1>
-      <Navbar />
-      <Destinations />
-      <Footer/>
+      <Destinations searchResults={searchResults} />
     </div>
+    <Footer/>
+
     </>
   )
 }

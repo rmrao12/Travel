@@ -6,24 +6,24 @@ import SortingComponent from './SortingComponent';
 import FilteringComponent from './FilteringComponent';
 import destinationsData from './destinationData';
 
-const Destinations = () => {
+const Destinations = ({ searchResults }) => {
     const [sortOption, setSortOption] = useState('default');
     const [filters, setFilters] = useState({
       minPrice: 0,
-      maxPrice: 2000,
+      maxPrice: 10000,
     });
-  
+
     const handleSortChange = (e) => {
       setSortOption(e.target.value);
     };
-  
+
     const handleFilterChange = (e) => {
       setFilters(prev => ({
         ...prev,
         [e.target.name]: e.target.value
       }));
     };
-  
+
     const sortDestinations = (destinations) => {
       switch (sortOption) {
         case 'price':
@@ -33,7 +33,6 @@ const Destinations = () => {
             return priceA - priceB;
           });
         case 'popularity':
-          // Example popularity sorting (if you have popularity data)
           return destinations.slice().sort((a, b) => b.popularity - a.popularity);
         case 'alphabetical':
           return destinations.slice().sort((a, b) => a.name.localeCompare(b.name));
@@ -41,7 +40,7 @@ const Destinations = () => {
           return destinations;
       }
     };
-  
+
     const filterDestinations = (destinations) => {
       if (sortOption === 'price') {
         return destinations.filter(destination => {
@@ -51,10 +50,11 @@ const Destinations = () => {
       }
       return destinations;
     };
-  
-    const sortedDestinations = sortDestinations(destinationsData);
+
+    const destinationsToDisplay = searchResults.length > 0 ? searchResults : destinationsData;
+    const sortedDestinations = sortDestinations(destinationsToDisplay);
     const filteredDestinations = filterDestinations(sortedDestinations);
-  
+
     return (
       <div>
         <SortingComponent sortOption={sortOption} onSortChange={handleSortChange} />
@@ -66,8 +66,7 @@ const Destinations = () => {
         </div>
       </div>
     );
-  };
-  
+};
 
 
 export default Destinations;
