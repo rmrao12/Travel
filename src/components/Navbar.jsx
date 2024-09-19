@@ -17,20 +17,20 @@ const Navbar = ({ onSearch }) => {
       );
       setSearchResults(filteredResults);
       onSearch(filteredResults);
-      setDropdownVisible(true); // Show dropdown when search is performed
+      setDropdownVisible(true); 
     } else {
       setSearchResults([]);
       onSearch([]);
-      setDropdownVisible(false); // Hide dropdown if no query
+      setDropdownVisible(false); 
     }
   };
 
   const handleChange = (e) => {
     setSearchQuery(e.target.value);
-    handleSearch(); // Perform search while typing
+    handleSearch(); 
   };
 
-  // Close dropdown if clicked outside
+  
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -75,7 +75,7 @@ const Navbar = ({ onSearch }) => {
             placeholder="Search entire store here..."
             value={searchQuery}
             onChange={handleChange}
-            onFocus={() => setDropdownVisible(true)} // Show dropdown on focus
+            onFocus={() => setDropdownVisible(true)} 
             aria-label="Search"
           />
           <button
