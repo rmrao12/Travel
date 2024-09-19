@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import destinationsData from "./destinationData";// Import destinations data
+import { Link } from "react-router-dom";
 
 const Navbar = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -45,17 +46,24 @@ const Navbar = ({ onSearch }) => {
     <div className="fixed top-0 left-0 right-0 z-50 bg-black py-10 px-20">
       <div className="flex items-center justify-between">
         {/* Logo Section */}
-        <div className="text-white">TRAVEL MASTER</div>
+        <div className="text-white">
+          <Link to="/" className="text-2xl font-bold">
+            TRAVEL MASTER
+          </Link>
+        </div>
         
         {/* Navigation Buttons */}
         <div className="flex-1 flex justify-center">
           <ul className="flex space-x-6 text-white">
-            <li>HOME</li>
-            <li>SERVICES</li>
-            <li>DESTINATIONS</li>
-            <li>FAQs</li>
-            <li>ABOUT US</li>
-            <li>CONTACT US</li>
+            <li>
+              <Link to="/destinations" className="hover:underline">DESTINATIONS</Link>
+            </li>
+            <li>
+              <Link to="/about-us" className="hover:underline">ABOUT US</Link>
+            </li>
+            <li>
+              <Link to="/contact-us" className="hover:underline">CONTACT US</Link>
+            </li>
           </ul>
         </div>
         

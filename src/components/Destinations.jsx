@@ -56,7 +56,7 @@ const Destinations = ({ searchResults }) => {
     const filteredDestinations = filterDestinations(sortedDestinations);
 
     return (
-      <div>
+      <div className='p-10 mt-40'>
         <SortingComponent sortOption={sortOption} onSortChange={handleSortChange} />
         <FilteringComponent filters={filters} onFilterChange={handleFilterChange} />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
