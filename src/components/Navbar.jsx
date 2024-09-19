@@ -64,6 +64,9 @@ const Navbar = ({ onSearch }) => {
             <li>
               <Link to="/contact-us" className="hover:underline">CONTACT US</Link>
             </li>
+            <li>
+              <Link to="/Feedback" className="hover:underline">FEEDBACK</Link>
+            </li>
           </ul>
         </div>
         
