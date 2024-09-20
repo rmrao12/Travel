@@ -55,6 +55,9 @@ const Navbar = ({ onSearch }) => {
         {/* Navigation Buttons */}
         <div className="flex-1 flex justify-center">
           <ul className="flex space-x-6 text-white">
+          <li>
+              <Link to="/log-in" className="hover:underline">LOGIN</Link>
+            </li>
             <li>
               <Link to="/destinations" className="hover:underline">DESTINATIONS</Link>
             </li>
