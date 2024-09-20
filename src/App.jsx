@@ -20,7 +20,7 @@ function App() {
         <Routes>
 
           {/* Default route to display Destinations when the site loads */}
-          <Route path="/log-in" element={<LoginSignup />} />
+          <Route path="/login" element={<LoginSignup />} />
           <Route
             path="/"
             element={<Destinations searchResults={searchResults} />}
@@ -31,7 +31,7 @@ function App() {
           />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/Feedback" element={<Reviews />} />
+          <Route path="/feedback" element={<Reviews />} />
           
         </Routes>
       </div>

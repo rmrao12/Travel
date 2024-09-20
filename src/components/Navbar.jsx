@@ -63,9 +63,7 @@ const Navbar = ({ onSearch }) => {
         {/* Navigation Buttons */}
         <div className="flex-1 hidden lg:flex items-center justify-center">
           <ul className="flex space-x-6 text-white">
-          <li>
-              <Link to="/log-in" className="hover:underline">LOGIN</Link>
-            </li>
+          
             <li>
               <Link to="/destinations" className="hover:underline px-3">
                 Destinations
@@ -82,9 +80,12 @@ const Navbar = ({ onSearch }) => {
               </Link>
             </li>
             <li>
-              <Link to="/Feedback" className="hover:underline px-3">
+              <Link to="/feedback" className="hover:underline px-3">
                 Feedback
               </Link>
+            </li>
+            <li>
+              <Link to="/login" className="hover:underline">Login</Link>
             </li>
           </ul>
         </div>
@@ -179,6 +180,9 @@ const Navbar = ({ onSearch }) => {
               >
                 Feedback
               </Link>
+            </li>
+            <li>
+              <Link to="/login" className="hover:underline">Login</Link>
             </li>
           </ul>
         </div>
