@@ -2,12 +2,15 @@ import React from 'react';
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen bg-white p-10 flex items-center justify-center pt-40">
-      <div className='p-20'>
-        <img src="/Images/Paris1.jpg" alt="img" />
-      </div>
+    <div className='p-6 md:p-20'>
+      <img
+        src="/Images/Paris1.jpg"
+        alt="img"
+        className='w-full mt-[130px] mx-auto mb-6 md:mb-0 md:w-[1700px] md:h-[450px]' 
+      />
+      
       <div className="max-w-4xl mx-auto p-6">
-        <h1 className="text-3xl font-bold mb-6 text-[#EC3642]">About Us</h1>
+        <h1 className="text-3xl font-bold mb-6 text-[#EC3642] mt-[30px]">About Us</h1>
         <p className="text-lg mb-4 text-gray-500">
           Welcome to Boxima, your one-stop destination for all things fitness! At our store, we are more than just a place to buy gym equipment; we are a community of fitness enthusiasts committed to helping you achieve your health and wellness goals.
         </p>
